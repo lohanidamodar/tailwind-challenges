@@ -9,10 +9,12 @@
 </head>
 
 <body>
-    <main class="flex flex-row h-screen">
-        <div class="w-44 h-screen bg-white shadow-xl">
+    <main class="flex flex-row h-screen overflow-hidden">
+        <!-- sidebar -->
+        <div class="w-44 h-screen flex flex-col bg-white shadow-xl">
             <div class="mb-4 text-xl text-red-600 font-bold p-2">Gmail</div>
-            <div class="flex flex-col">
+            <div class="flex flex-col flex-grow">
+                <!-- menu -->
                 <div class="flex-grow">
                     <ul class="text-gray-500 text-xs font-semibold">
                         <li
@@ -98,7 +100,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="mt-4 p-4">
+                <!-- chats list -->
+                <div class="mt-4 p-4 max-h-44 overflow-auto">
                     <h3 class="font-semibold text-sm mb-2">Chat</h3>
                     <ul class="space-y-2">
                         <li class="rounded-full">
@@ -130,9 +133,9 @@
                 </div>
             </div>
         </div>
-        <div class="flex-grow flex flex-col h-screen">
+        <div class="flex-grow flex flex-col h-screen pt-12 relative">
             <!-- top nav -->
-            <div class="flex flex-row h-12 p-2 border-b-2 shadow-sm">
+            <div class="flex flex-row h-12 p-2 border-b-2 shadow-sm bg-white absolute right-0 left-0 top-0">
                 <div class="w-64">
                     <input type="text" placeholder="search"
                         class="rounded-r-full w-full rounded-l-full focus:outline-none ring-1 ring-gray-200 focus:ring-red-200 p-1 pl-4 text-xs">
@@ -165,8 +168,8 @@
                 </div>
 
             </div>
-            <div class="flex flex-row flex-grow overflow-auto">
-                <div class="list w-80 shadow">
+            <div class="flex flex-row flex-grow">
+                <div class="list w-80 shadow h-screen overflow-auto">
                     <!-- inbox menu -->
                     <div class="inbox-nav text-xs text-center font-semibold text-gray-400 flex flex-row items-stretch">
                         <span class="w-6 border-b-2 border-gray-200"></span>
@@ -197,9 +200,10 @@
                             </svg>
                         </span>
                     </div>
-                    <div class="email-list">
+                    <!-- email list -->
+                    <div class="email-list pb-12">
                         <div
-                            class="email-item hover:bg-gray-100 cursor-pointer flex flex-col p-3 border-b-2 border-gray-200">
+                            class="email-item bg-gray-100 hover:bg-gray-100 cursor-pointer flex flex-col p-3 border-b-2 border-gray-200">
                             <div class="flex flex-row items-center text-xs text-gray-400">
                                 <input type="checkbox" name="c" id="">
                                 <p class="pl-2 flex-grow">Dropbox <span
@@ -268,7 +272,45 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex-grow">Email details</div>
+                <!-- opened email view -->
+                <div class="flex-grow shadow flex flex-col h-screen overflow-auto">
+                    <div class="header bg-white p-4">
+                        <div class="flex flex-row text-xs text-gray-400 items-center mb-2">
+                            <p class="flex-grow text-sm">Apr 16, 1:20pm</p>
+                            <svg class="stroke-current text-red-500 cursor-pointer" xmlns="http://www.w3.org/2000/svg"
+                                width="20" height="20" viewBox="0 0 24 24" fill="rgba(239, 68, 68, 255)"
+                                stroke="rgba(107, 114, 128, 255)" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                            <svg class="stroke-current cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(107, 114, 128, 255)"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="16 3 21 8 8 21 3 21 3 16 16 3"></polygon>
+                            </svg>
+                            <svg class="stroke-current cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="20"
+                                height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(107, 114, 128, 255)"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="12" cy="5" r="1"></circle>
+                                <circle cx="12" cy="19" r="1"></circle>
+                            </svg>
+                        </div>
+                        <div class="flex flex-row items-center py-2">
+                            <div class="avatar rounded-full mr-2 bg-black w-9 h-9"></div>
+                            <div class="flex flex-col">
+                                <div class="flex flex-row items-center">
+                                    <h2 class="font-bold text-black">Dropbox</h2>
+                                    <p class="text-xs text-gray-400 ml-2">(info@dropbox.com)</p>
+                                </div>
+                                <p class="text-xs text-gray-400">to me</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-300 flex-grow">
+
+                    </div>
+                </div>
             </div>
         </div>
     </main>
