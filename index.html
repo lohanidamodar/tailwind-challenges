@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Challenges</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <main class="flex flex-col h-screen">
+        <header class="flex flex-col justify-center items-center bg-red-500 text-white p-5 text-center">
+            <h2 class="text-xl p-2 rounded font-bold">
+                Tailwind Challenges
+            </h2>
+            <p class="text-sm">
+                by <a href="https://dlohani.com.np" target="_blank"
+                    class="underline text-red-100 hover:text-white font-bold">Damodar Lohani</a>
+            </p>
+        </header>
+        <div class="container p-5 grid grid-cols-3 gap-5">
+            <a href="./tailwind-login/index.html"
+                class=" flex border-2 border-gray-200 relative hover:border-red-500 bg-gray-100 rounded-xl hover:ring-2 ring-red-500">
+                <img src='./tailwind-login/screenshot.png' class="rounded-xl" />
+                <div class="absolute h-8 bg-white bottom-0 left-0 right-0 rounded-b-xl flex justify-center items-center">
+                    <p class="text-red-500 text-xs font-semibold px-5">Beautiful Login</p>
+                </div>
+            </a>
+            <a href="./gmail-redesign/index.html"
+                class="relative flex border-2 border-gray-200 hover:border-red-500 bg-gray-100 rounded-xl">
+                <img src='./gmail-redesign/screenshot.png' class="object-fill rounded-xl pb-8" />
+                <div class="absolute h-8 bg-white bottom-0 left-0 right-0 rounded-b-xl flex justify-center items-center">
+                    <p class="text-red-500 text-xs font-semibold px-5">Beautiful Login</p>
+                </div>
+            </a>
+        </div>
+    </main>
+</body>
+
+</html>
